@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../resources/app_colors.dart';
@@ -7,12 +8,14 @@ class CustomTextField extends StatefulWidget {
   final String label;
   final String hint;
   final bool isPassword;
+  final bool isMobile;
 
   const CustomTextField({
     super.key,
     required this.label,
     required this.hint,
     this.isPassword = false,
+    this.isMobile = false,
   });
 
   @override
@@ -37,6 +40,10 @@ class _CustomTextFieldState extends State<CustomTextField> {
           ),
         TextField(
           obscureText: widget.isPassword && _obscure,
+          keyboardType: widget.isMobile ? TextInputType.phone : TextInputType.text,
+          inputFormatters: widget.isMobile
+              ? [FilteringTextInputFormatter.digitsOnly] // Only allow digits
+              : null,
           decoration: InputDecoration(
             hintText: widget.hint,
             hintStyle: TextStyle(fontSize: 16.sp, color: AppColors.gray),

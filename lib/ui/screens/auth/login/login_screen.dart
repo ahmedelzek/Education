@@ -67,7 +67,9 @@ class LoginScreen extends StatelessWidget {
               ),
               SizedBox(height: 40.h),
               FilledButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, Routes.chaptersRoute);
+                },
                 child: Text(getTranslations(context).login),
               ),
               SizedBox(height: 40.h),
