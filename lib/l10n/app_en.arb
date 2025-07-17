@@ -1,0 +1,21 @@
+{
+  "@@locale": "en",
+  "app_name": "Education",
+  "welcome_back": "Welcome Back To Education",
+  "login_prompt": "Please login with your mail",
+  "user_name": "User Name",
+  "enter_user_name": "enter your user name",
+  "password": "Password",
+  "enter_password": "enter your password",
+  "forgot_password": "Forgot password",
+  "login": "Login",
+  "no_account_prompt": "Don’t have an account? Create Account",
+  "full_name": "Full Name",
+  "enter_full_name": "enter your full name",
+  "mobile_number": "Mobile Number",
+  "enter_mobile_number": "enter your mobile no.",
+  "email_address": "E-mail address",
+  "enter_email_address": "enter your email address",
+  "register": "Register",
+  "search_text": "what do you search for?"
+}
