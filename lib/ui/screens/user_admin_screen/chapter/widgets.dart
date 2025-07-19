@@ -6,17 +6,17 @@ void showSnackBar(BuildContext context) {
   ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(
       content: Text(
-        getTranslations(context).error_snack_bar_prompt,
+        LocalizationManager().tr!.error_snack_bar_prompt,
         style: TextStyle(fontSize: 16, color: Colors.white),
       ),
       duration: const Duration(seconds: 2),
       backgroundColor: AppColors.red,
       action: SnackBarAction(
-        label: getTranslations(context).ok,
+        label: LocalizationManager().tr!.ok,
         textColor: Colors.white,
         onPressed: () {
           ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text(getTranslations(context).ok)),
+            SnackBar(content: Text(LocalizationManager().tr!.ok)),
           );
         },
       ),

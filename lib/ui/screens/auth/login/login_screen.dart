@@ -32,32 +32,32 @@ class LoginScreen extends StatelessWidget {
               ),
               SizedBox(height: 50.h),
               Text(
-                getTranslations(context).welcome_back,
+                LocalizationManager().tr!.welcome_back,
                 style: Theme.of(context).textTheme.titleLarge?.copyWith(
                   color: AppColors.white,
                   fontWeight: FontWeight.w700,
                 ),
               ),
               Text(
-                getTranslations(context).login_prompt,
+                LocalizationManager().tr!.login_prompt,
                 style: Theme.of(
                   context,
                 ).textTheme.bodyLarge?.copyWith(color: AppColors.white),
               ),
               SizedBox(height: 40.h),
               CustomTextField(
-                label: getTranslations(context).user_name,
-                hint: getTranslations(context).enter_user_name,
+                label: LocalizationManager().tr!.user_name,
+                hint: LocalizationManager().tr!.enter_user_name,
               ),
               SizedBox(height: 40.h),
               CustomTextField(
-                label: getTranslations(context).password,
-                hint: getTranslations(context).enter_password,
+                label: LocalizationManager().tr!.password,
+                hint: LocalizationManager().tr!.enter_password,
                 isPassword: true,
               ),
               Text(
                 textAlign: TextAlign.end,
-                getTranslations(context).forgot_password,
+                LocalizationManager().tr!.forgot_password,
                 style: Theme.of(context).textTheme.labelMedium?.copyWith(
                   fontStyle: FontStyle.italic,
                   decoration: TextDecoration.underline,
@@ -70,7 +70,7 @@ class LoginScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.pushReplacementNamed(context, Routes.chaptersRoute);
                 },
-                child: Text(getTranslations(context).login),
+                child: Text(LocalizationManager().tr!.login),
               ),
               SizedBox(height: 40.h),
               InkWell(
@@ -78,7 +78,7 @@ class LoginScreen extends StatelessWidget {
                   Navigator.pushNamed(context, Routes.registerRoute);
                 },
                 child: Text(
-                  getTranslations(context).no_account_prompt,
+                  LocalizationManager().tr!.no_account_prompt,
                   style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: AppColors.white),
                 ),
               ),
