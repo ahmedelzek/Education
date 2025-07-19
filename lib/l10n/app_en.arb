@@ -21,5 +21,7 @@
   "chapters": "Chapters",
   "add_chapter": "Add Chapter",
   "chapter_no": "Chapter No",
-  "chapter_title": "Chapter Title"
+  "chapter_title": "Chapter Title",
+  "error_snack_bar_prompt": "Please Enter Values",
+  "ok": "OK"
 }

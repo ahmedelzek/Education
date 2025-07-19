@@ -29,6 +29,12 @@ class _ChaptersScreenState extends State<ChaptersScreen> {
     super.initState();
   }
 
+  void _addNewChapter(ChapterModel newChapter) {
+    setState(() {
+      chapters.add(newChapter);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +43,7 @@ class _ChaptersScreenState extends State<ChaptersScreen> {
         onPressed: () {
           showModalBottomSheet(
             context: context,
-            builder: (context) => AddChapterBottomSheet(),
+            builder: (context) => AddChapterBottomSheet(onChapterAdded: _addNewChapter,),
           );
         },
         backgroundColor: AppColors.darkBlue,
