@@ -8,7 +8,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 Future<void> main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
-  await Future.delayed(const Duration(milliseconds: 500));
+  await Future.delayed(const Duration(seconds: 1));
 
   FlutterNativeSplash.remove();
   runApp(const MyApp());
