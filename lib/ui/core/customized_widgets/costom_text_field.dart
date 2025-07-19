@@ -9,13 +9,15 @@ class CustomTextField extends StatefulWidget {
   final String hint;
   final bool isPassword;
   final bool isMobile;
+  final TextEditingController? controller; // Add controller parameter
 
   const CustomTextField({
     super.key,
-    required this.label,
+    this.label= "",
     required this.hint,
     this.isPassword = false,
     this.isMobile = false,
+    this.controller,
   });
 
   @override
@@ -39,6 +41,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
             ),
           ),
         TextField(
+          controller: widget.controller,
           obscureText: widget.isPassword && _obscure,
           keyboardType: widget.isMobile ? TextInputType.phone : TextInputType.text,
           inputFormatters: widget.isMobile

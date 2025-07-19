@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../l10n/app_translations.dart';
+import 'add_chapter_bottom_sheet.dart';
 
 class ChaptersScreen extends StatefulWidget {
   const ChaptersScreen({super.key});
@@ -24,14 +25,14 @@ class _ChaptersScreenState extends State<ChaptersScreen> {
       ChapterModel("Dart", 3),
       ChapterModel("Flutter", 4),
       ChapterModel("Python", 5),
-      ChapterModel("Python", 5),
-      ChapterModel("Python", 5),
-      ChapterModel("Python", 5),
-      ChapterModel("Python", 5),
-      ChapterModel("Python", 5),
-      ChapterModel("Python", 5),
     ]);
     super.initState();
+  }
+
+  void _addNewChapter(ChapterModel newChapter) {
+    setState(() {
+      chapters.add(newChapter);
+    });
   }
 
   @override
@@ -39,7 +40,12 @@ class _ChaptersScreenState extends State<ChaptersScreen> {
     return Scaffold(
       appBar: AppBar(title: Text(getTranslations(context).chapters)),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          showModalBottomSheet(
+            context: context,
+            builder: (context) => AddChapterBottomSheet(onChapterAdded: _addNewChapter,),
+          );
+        },
         backgroundColor: AppColors.darkBlue,
         child: Icon(Icons.add,color: AppColors.white,size: 32,),
       ),
