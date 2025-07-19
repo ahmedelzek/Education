@@ -18,5 +18,8 @@
   "enter_email_address": "enter your email address",
   "register": "Register",
   "search_text": "what do you search for?",
-  "chapters": "Chapters"
+  "chapters": "Chapters",
+  "add_chapter": "Add Chapter",
+  "chapter_no": "Chapter No",
+  "chapter_title": "Chapter Title"
 }
