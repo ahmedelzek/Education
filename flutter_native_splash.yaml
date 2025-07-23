@@ -1,11 +1,11 @@
 flutter_native_splash:
-  image: assets/images/white_logo.png
-  background_image: assets/images/splash_background.png
+  image: assets/images/final_logo.png
+  color: "#ffffff"
   android_gravity: center
 
   android_12:
-    image: assets/images/white_logo.png
-    background_image: assets/images/splash_background.png
+    image: assets/images/final_logo.png
+    color: "#ffffff"
     android_gravity: center
 
   android: true

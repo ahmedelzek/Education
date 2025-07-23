@@ -38,7 +38,7 @@ class _ChaptersScreenState extends State<ChaptersScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(getTranslations(context).chapters)),
+      appBar: AppBar(title: Text(LocalizationManager().tr!.chapters)),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           showModalBottomSheet(

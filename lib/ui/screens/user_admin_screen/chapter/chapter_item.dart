@@ -45,7 +45,7 @@ class _ChapterItemState extends State<ChapterItem> {
                 ).textTheme.bodyMedium?.copyWith(color: AppColors.white),
               ),
               Text(
-                "${getTranslations(context).chapter_no} ${widget.chapterModel.chapterNum}",
+                "${LocalizationManager().tr!.chapter_no} ${widget.chapterModel.chapterNum}",
                 style: Theme.of(
                   context,
                 ).textTheme.bodyLarge?.copyWith(color: AppColors.white))

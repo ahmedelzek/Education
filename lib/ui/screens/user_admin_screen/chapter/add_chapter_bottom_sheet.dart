@@ -1,6 +1,6 @@
 import 'package:education/dummy_model/chapters_model.dart';
 import 'package:education/l10n/app_translations.dart';
-import 'package:education/ui/core/customized_widgets/costom_text_field.dart';
+import 'package:education/ui/core/customized_widgets/custom_text_field.dart';
 import 'package:education/ui/core/resources/app_colors.dart';
 import 'package:education/ui/screens/user_admin_screen/chapter/widgets.dart';
 import 'package:flutter/material.dart';
@@ -44,20 +44,20 @@ class _AddChapterBottomSheetState extends State<AddChapterBottomSheet> {
               ),
               SizedBox(height: 24.h),
               Text(
-                getTranslations(context).add_chapter,
-                style: Theme.of(
-                  context,
-                ).textTheme.bodyMedium?.copyWith(color: AppColors.white),
+                LocalizationManager().tr!.add_chapter,
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                  color: AppColors.white,
+                ),
               ),
               SizedBox(height: 60.h),
               CustomTextField(
                 controller: chapterTitleController,
-                hint: getTranslations(context).chapter_title,
+                hint: LocalizationManager().tr!.chapter_title,
               ),
               SizedBox(height: 32.h),
               CustomTextField(
                 controller: chapterNoController,
-                hint: getTranslations(context).chapter_no,
+                hint: LocalizationManager().tr!.chapter_no,
                 isMobile: true,
               ),
               SizedBox(height: 32.h),
@@ -65,7 +65,7 @@ class _AddChapterBottomSheetState extends State<AddChapterBottomSheet> {
                 onPressed: () {
                   _onAddChapterPressed(context);
                 },
-                child: Text(getTranslations(context).add_chapter),
+                child: Text(LocalizationManager().tr!.add_chapter),
               ),
             ],
           ),
@@ -73,6 +73,7 @@ class _AddChapterBottomSheetState extends State<AddChapterBottomSheet> {
       ),
     );
   }
+
   void _onAddChapterPressed(BuildContext context) {
     if (chapterTitleController.text.isEmpty &&
         chapterNoController.text.isEmpty) {
@@ -80,9 +81,9 @@ class _AddChapterBottomSheetState extends State<AddChapterBottomSheet> {
     } else {
       final chapter = ChapterModel(
         chapterTitleController.text,
-        double.parse(chapterNoController.text)
+        double.parse(chapterNoController.text),
       );
-      widget.onChapterAdded(chapter); // Call the callback with the user
+      widget.onChapterAdded(chapter);
       Navigator.pop(context);
     }
   }

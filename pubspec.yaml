@@ -33,3 +33,10 @@ flutter:
   assets:
      - assets/images/
      - assets/svgs/
+  fonts:
+    - family: Fredoka
+      fonts:
+        - asset: assets/fonts/Fredoka-Regular.ttf
+    - family: Quicksand
+      fonts:
+        - asset: assets/fonts/Quicksand-Regular.ttf

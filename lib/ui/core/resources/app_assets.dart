@@ -1,13 +1,17 @@
 
 abstract class AppImages {
   static const String base = "assets/images/";
-  static const String appWhiteLogo = "${base}white_logo.png";
-  static const String splashLogo = "${base}splash_logo.png";
-  static const String blueLogo = "${base}blue_logo.png";
-  static const String splashBackground = "${base}splash_background.png";
+  static const String finalLogo = "${base}final_logo.png";
 }
 
 
 abstract class AppSvgs {
   static const String base = "assets/svgs/";
+}
+abstract class AppFonts {
+  static const String fontFamilyFredoka = "Fredoka";
+  static const String fontFamilyQuicksand = "Quicksand";
+  static const String base = "assets/fonts/";
+  static const String fredoka = "${base}Fredoka-Regular.ttf";
+  static const String quicksand = "${base}Quicksand-Regular.ttf";
 }
