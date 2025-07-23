@@ -1,6 +1,6 @@
 import 'package:education/dummy_model/chapters_model.dart';
 import 'package:education/l10n/app_translations.dart';
-import 'package:education/ui/core/customized_widgets/costom_text_field.dart';
+import 'package:education/ui/core/customized_widgets/custom_text_field.dart';
 import 'package:education/ui/core/resources/app_colors.dart';
 import 'package:education/ui/screens/user_admin_screen/chapter/widgets.dart';
 import 'package:flutter/material.dart';

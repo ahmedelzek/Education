@@ -3,7 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:keyboard_avoider/keyboard_avoider.dart';
 
 import '../../../../l10n/app_translations.dart';
-import '../../../core/customized_widgets/costom_text_field.dart';
+import '../../../core/customized_widgets/custom_linear_gradient.dart';
+import '../../../core/customized_widgets/custom_text_field.dart';
 import '../../../core/resources/app_colors.dart';
 
 class RegisterScreen extends StatelessWidget {
@@ -15,7 +16,10 @@ class RegisterScreen extends StatelessWidget {
       backgroundColor: AppColors.blue,
       body: KeyboardAvoider(
         autoScroll: true,
-        child: Padding(
+        child: Container(
+          decoration: BoxDecoration(
+            gradient: customLinearGradient(),
+          ),
           padding: EdgeInsets.symmetric(horizontal: 16.w),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,

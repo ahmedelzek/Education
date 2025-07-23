@@ -1,10 +1,11 @@
+import 'package:education/ui/core/customized_widgets/custom_linear_gradient.dart';
 import 'package:education/ui/core/resources/app_assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:keyboard_avoider/keyboard_avoider.dart';
 
 import '../../../../l10n/app_translations.dart';
-import '../../../core/customized_widgets/costom_text_field.dart';
+import '../../../core/customized_widgets/custom_text_field.dart';
 import '../../../core/resources/app_colors.dart';
 import '../../../core/routes_manager/generate_routes.dart';
 
@@ -17,20 +18,20 @@ class LoginScreen extends StatelessWidget {
       backgroundColor: AppColors.blue,
       body: KeyboardAvoider(
         autoScroll: true,
-        child: Padding(
+        child: Container(
+          decoration: BoxDecoration(
+            gradient: customLinearGradient(),),
           padding: EdgeInsets.symmetric(horizontal: 16.w),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              SizedBox(height: 70.h),
+              SizedBox(height: 30.h),
               Center(
                 child: Image.asset(
-                  AppImages.appWhiteLogo,
-                  width: 150.w,
-                  height: 150.h,
+                  AppImages.finalLogo,
                 ),
               ),
-              SizedBox(height: 50.h),
+              SizedBox(height: 20.h),
               Text(
                 LocalizationManager().tr!.welcome_back,
                 style: Theme.of(context).textTheme.titleLarge?.copyWith(

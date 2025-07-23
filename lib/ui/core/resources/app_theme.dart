@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'app_assets.dart';
 import 'app_colors.dart';
 
 class AppTheme {
@@ -18,36 +19,43 @@ class AppTheme {
         color: AppColors.darkBlue,
         fontSize: 16,
         fontWeight: FontWeight.w500,
+        fontFamily: AppFonts.fontFamilyFredoka,
       ),
       bodyMedium: TextStyle(
         color: AppColors.darkBlue,
         fontSize: 20,
         fontWeight: FontWeight.w500,
+        fontFamily: AppFonts.fontFamilyFredoka,
       ),
       bodySmall: TextStyle(
         color: AppColors.darkBlue,
         fontSize: 12,
         fontWeight: FontWeight.w500,
+        fontFamily: AppFonts.fontFamilyFredoka,
       ),
       titleLarge: TextStyle(
         color: AppColors.darkBlue,
         fontSize: 24,
         fontWeight: FontWeight.bold,
+        fontFamily: AppFonts.fontFamilyFredoka,
       ),
       labelLarge: TextStyle(
         color: AppColors.white,
         fontSize: 22,
         fontWeight: FontWeight.bold,
+        fontFamily: AppFonts.fontFamilyFredoka,
       ),
       labelMedium: TextStyle(
         color: AppColors.white,
         fontSize: 20,
         fontWeight: FontWeight.bold,
+        fontFamily: AppFonts.fontFamilyFredoka,
       ),
       labelSmall: TextStyle(
         color: AppColors.white,
         fontSize: 16,
         fontWeight:   FontWeight.bold,
+        fontFamily: AppFonts.fontFamilyFredoka,
       ),
     ),
     dividerTheme: const DividerThemeData(color: AppColors.blue),
@@ -63,6 +71,7 @@ class AppTheme {
         textStyle: const TextStyle(
           color: AppColors.blue,
           fontWeight: FontWeight.bold,
+          fontFamily: AppFonts.fontFamilyFredoka,
           fontSize: 20,),
         padding: const EdgeInsets.all(16),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),

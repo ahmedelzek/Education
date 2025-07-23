@@ -1,3 +1,4 @@
+import 'package:education/ui/core/resources/app_assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -13,7 +14,7 @@ class CustomTextField extends StatefulWidget {
 
   const CustomTextField({
     super.key,
-    this.label= "",
+    this.label = "",
     required this.hint,
     this.isPassword = false,
     this.isMobile = false,
@@ -37,22 +38,35 @@ class _CustomTextFieldState extends State<CustomTextField> {
             padding: const EdgeInsets.only(bottom: 6.0),
             child: Text(
               widget.label,
-              style: Theme.of(context).textTheme.labelMedium
+              style: Theme.of(context).textTheme.labelMedium,
             ),
           ),
         TextField(
           controller: widget.controller,
           obscureText: widget.isPassword && _obscure,
-          keyboardType: widget.isMobile ? TextInputType.phone : TextInputType.text,
-          inputFormatters: widget.isMobile
-              ? [FilteringTextInputFormatter.digitsOnly] // Only allow digits
-              : null,
+          keyboardType:
+              widget.isMobile ? TextInputType.phone : TextInputType.text,
+          inputFormatters:
+              widget.isMobile
+                  ? [
+                    FilteringTextInputFormatter.digitsOnly,
+                  ] // Only allow digits
+                  : null,
+          style: TextStyle(
+            fontSize: 16.sp,
+            color: AppColors.darkBlue,
+            fontWeight: FontWeight.bold,
+            fontFamily: AppFonts.fontFamilyQuicksand,
+          ),
           decoration: InputDecoration(
             hintText: widget.hint,
             hintStyle: TextStyle(fontSize: 16.sp, color: AppColors.gray),
             filled: true,
             fillColor: Colors.white,
-            contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
+            contentPadding: const EdgeInsets.symmetric(
+              horizontal: 20,
+              vertical: 18,
+            ),
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(16),
               borderSide: BorderSide.none,
@@ -61,14 +75,15 @@ class _CustomTextFieldState extends State<CustomTextField> {
               borderRadius: BorderRadius.circular(16),
               borderSide: const BorderSide(color: Colors.blue, width: 1),
             ),
-            suffixIcon: widget.isPassword
-                ? IconButton(
-              icon: Icon(
-                _obscure ? Icons.visibility_off : Icons.visibility,
-              ),
-              onPressed: () => setState(() => _obscure = !_obscure),
-            )
-                : null,
+            suffixIcon:
+                widget.isPassword
+                    ? IconButton(
+                      icon: Icon(
+                        _obscure ? Icons.visibility_off : Icons.visibility,
+                      ),
+                      onPressed: () => setState(() => _obscure = !_obscure),
+                    )
+                    : null,
           ),
         ),
       ],
