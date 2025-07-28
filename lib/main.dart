@@ -6,11 +6,13 @@ import 'package:education/l10n/app_translations.dart';
 import 'package:education/ui/core/resources/app_theme.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+import 'di/di.dart';
+
 
 Future<void> main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
-
+  configureDependencies();
   await Future.delayed(const Duration(seconds: 1));
   FlutterNativeSplash.remove();
 
