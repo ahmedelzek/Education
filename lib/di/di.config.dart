@@ -19,6 +19,7 @@ import '../domain/repos/auth_repo.dart' as _i425;
 import '../domain/use_cases/login_use_case.dart' as _i839;
 import '../domain/use_cases/register_use_case.dart' as _i293;
 import '../ui/screens/auth/login/cubit/login_view_model.dart' as _i216;
+import '../ui/screens/auth/register/cubit/register_view_model.dart' as _i951;
 
 
 extension GetItInjectableX on _i174.GetIt {
@@ -43,6 +44,8 @@ extension GetItInjectableX on _i174.GetIt {
             () => _i293.RegisterUseCase(authRepo: gh<_i425.AuthRepo>()));
     gh.factory<_i216.LoginViewModel>(
             () => _i216.LoginViewModel(gh<_i839.LoginUseCase>()));
+    gh.factory<_i951.RegisterViewModel>(
+            () => _i951.RegisterViewModel(gh<_i293.RegisterUseCase>()));
     return this;
   }
 }

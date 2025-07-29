@@ -129,9 +129,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 content: Text('Please fill all fields'),
                               ),
                             );
-                            return;
                           }
-
                           context.read<LoginViewModel>().login(
                             LoginRequest(
                               email: username,
