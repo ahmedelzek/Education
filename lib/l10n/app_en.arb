@@ -6,6 +6,7 @@
   "user_name": "User Name",
   "enter_user_name": "enter your user name",
   "password": "Password",
+  "confirm_password": "Confirm Password",
   "enter_password": "enter your password",
   "forgot_password": "Forgot password",
   "login": "Login",
