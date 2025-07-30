@@ -1,5 +1,6 @@
 import 'package:education/dummy_model/chapters_model.dart';
 import 'package:education/ui/core/resources/app_colors.dart';
+import 'package:education/ui/core/routes_manager/generate_routes.dart';
 import 'package:education/ui/screens/user_admin_screen/chapter/chapter_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -43,11 +44,13 @@ class _ChaptersScreenState extends State<ChaptersScreen> {
         onPressed: () {
           showModalBottomSheet(
             context: context,
-            builder: (context) => AddChapterBottomSheet(onChapterAdded: _addNewChapter,),
+            builder:
+                (context) =>
+                    AddChapterBottomSheet(onChapterAdded: _addNewChapter),
           );
         },
         backgroundColor: AppColors.darkBlue,
-        child: Icon(Icons.add,color: AppColors.white,size: 32,),
+        child: Icon(Icons.add, color: AppColors.white, size: 32),
       ),
       body: Padding(
         padding: EdgeInsets.all(16.dg),
@@ -57,8 +60,19 @@ class _ChaptersScreenState extends State<ChaptersScreen> {
             Expanded(
               child: ListView.separated(
                 itemBuilder:
-                    (BuildContext context, int index) =>
-                        ChapterItem(chapterModel: chapters[index]),
+                    (BuildContext context, int index) => InkWell(
+                      onTap: () {
+                        Navigator.pushNamed(
+                          context,
+                          Routes.questionsRoute,
+                          arguments: {
+                            'chapterName': chapters[index].chapterTitle,
+                            'chapterNumber': chapters[index].chapterNum,
+                          },
+                        );
+                      },
+                      child: ChapterItem(chapterModel: chapters[index]),
+                    ),
                 itemCount: chapters.length,
                 separatorBuilder: (BuildContext context, int index) {
                   return Container(
