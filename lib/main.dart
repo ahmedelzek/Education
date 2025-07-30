@@ -31,9 +31,10 @@ class MyApp extends StatelessWidget {
       builder: (context, child) {
         return MaterialApp(
           title: 'Education',
+          debugShowCheckedModeBanner: false,
           theme: AppTheme.lightTheme,
-          initialRoute: Routes.loginRoute,
-          routes: Routes.getAppRoutes(),
+          initialRoute: Routes.chaptersRoute,
+          onGenerateRoute: Routes.generateRoute,
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           supportedLocales: AppLocalizations.supportedLocales,
           locale: const Locale('en'),
